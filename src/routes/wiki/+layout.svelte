@@ -107,6 +107,11 @@
 		top: 0;
 		position: -webkit-sticky;
 		position: sticky;
+
+		user-select: none;
+		-ms-user-select: none;
+		-moz-user-select: none;
+		-webkit-user-select: none;
 	}
 
 	section {
