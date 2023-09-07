@@ -1,13 +1,16 @@
-import fs, { mkdir, mkdirSync, writeFileSync } from 'fs';
+import fs, { mkdirSync, writeFileSync } from 'fs';
 
 const CONTENT_PATH = "content/";
 const GENERATE_PATH = "src/generated/";
 
 const buildContent = () => {
-    const directory = fs.readdirSync(CONTENT_PATH, {
+    const dir = fs.readdirSync(CONTENT_PATH, {
         recursive: true,
-        withFileTypes: true,
-    }).sort((a, b) => a.name.localeCompare(b.name))
+    })
+
+    console.log("dir", dir)
+
+    const directory = dir.sort((a, b) => a.name.localeCompare(b.name));
 
     const data = [];
 
