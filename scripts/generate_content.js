@@ -5,7 +5,7 @@ const GENERATE_PATH = "src/generated/";
 
 const buildContent = () => {
     const dir = fs.readdirSync(CONTENT_PATH, {
-        recursive: true,
+        withFileTypes: true,
     })
 
     console.log("dir", dir)
