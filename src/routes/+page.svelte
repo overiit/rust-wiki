@@ -1,3 +1,7 @@
+<svelte:head>
+	<title>Farm, Sell, Thrive - Rust Wiki</title>
+</svelte:head>
+
 <div class="headline">
 	FARM<br />
 	SELL<br />

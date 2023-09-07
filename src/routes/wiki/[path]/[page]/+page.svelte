@@ -5,6 +5,12 @@
 
 	$: params = $page.params;
 	$: content = getPageByParams(params.path, params.page);
+	$: title = content
+		? [...content]
+				.reverse()
+				.map((page) => page.title)
+				.join(' - ') + ' - Rust Wiki'
+		: '404 Not Found';
 
 	function getPageByParams(path, page) {
 		if (path) {
@@ -13,10 +19,10 @@
 				if (page) {
 					const sub = category.pages?.find((sub) => sub.path === page);
 					if (sub) {
-						return sub.content;
+						return [category, sub];
 					}
 				} else {
-					return category.content;
+					return [category];
 				}
 			}
 		}
@@ -24,4 +30,10 @@
 	}
 </script>
 
-<BetterMarkdown source={content ?? '# 404 Not Found'} />
+<svelte:head>
+	<title>
+		{title}
+	</title>
+</svelte:head>
+
+<BetterMarkdown source={content?.[content.length - 1].content ?? '# 404 Not Found'} />
