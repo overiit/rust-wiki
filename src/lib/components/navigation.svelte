@@ -6,7 +6,7 @@
 		<div class="name">FARM GUIDE</div>
 	</a>
 	<div class="menu">
-		<a href="https://github.com/" target="_blank" class="github">
+		<a href="https://github.com/overiit/rust-wiki" target="_blank" class="github">
 			<img src="/icons/github.svg" alt="" />
 		</a>
 	</div>
