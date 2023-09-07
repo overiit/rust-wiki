@@ -6,7 +6,7 @@ const GENERATE_PATH = "src/generated/";
 const buildContent = () => {
     const directory = fs.readdirSync(CONTENT_PATH, {
         withFileTypes: true,
-    }).sort((a, b) => a.name?.localeCompare(b.name));
+    }).sort((a, b) => a.name.localeCompare(b.name));
 
     const data = [];
 
@@ -17,7 +17,6 @@ const buildContent = () => {
             const { name } = item;
 
             const files = fs.readdirSync(`${CONTENT_PATH}${name}/`, {
-                recursive: true,
                 withFileTypes: true,
             }).sort((a, b) => a.name.localeCompare(b.name));
 
