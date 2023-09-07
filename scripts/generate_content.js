@@ -4,13 +4,9 @@ const CONTENT_PATH = "content/";
 const GENERATE_PATH = "src/generated/";
 
 const buildContent = () => {
-    const dir = fs.readdirSync(CONTENT_PATH, {
+    const directory = fs.readdirSync(CONTENT_PATH, {
         withFileTypes: true,
-    })
-
-    console.log("dir", dir)
-
-    const directory = dir.sort((a, b) => a.name.localeCompare(b.name));
+    }).sort((a, b) => a.name?.localeCompare(b.name));
 
     const data = [];
 
